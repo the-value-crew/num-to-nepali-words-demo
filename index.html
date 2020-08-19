@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number to Nepali Words - Demo </title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Mukta&display=swap" rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.2.3/gh-fork-ribbon.min.css" />
+
+    <style>
+        body {
+            color: rgb(68, 68, 68);
+            background-color: rgb(231, 228, 228);
+            font-family: 'Mukta', sans-serif;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            font-family: 'Berkshire Swash', cursive;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <div class="container pt-5">
+            <h1 class="text-center">Number to Nepali Words</h1>
+            <div class="row mt-5">
+                <div class="col-md-6">
+                    <div class="card mb-4 mb-md-0" style="min-height: 320px;">
+                        <div class="card-body">
+
+                            <div class="d-flex justify-content-between mb-5">
+                                <h5 class="card-title">
+                                    <u>Try it yourself</u> ✌️
+                                </h5>
+
+                                <div>
+                                    <select v-model="selectedTranslation" class="form-control" style="width: 70px">
+                                        <option v-for="t in translations" :value="t">{{t == 'en' ? '🇬🇧' : '🇳🇵'}}
+                                        </option>
+                                    </select>
+                                </div>
+
+                            </div>
+
+                            <input type="text" class="form-control" v-model="number" ref="numberInput" />
+
+                            <h4 class="text-info text-center mt-5">
+                                {{computedWords}}
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card" style="min-height: 320px;">
+                        <div class="card-body">
+                            <h5 class="card-title"><u>Few Examples</u></h5>
+
+                            <table class="table">
+                                <tr>
+                                    <td>
+                                        12345
+                                    </td>
+                                    <td>
+                                        बाह्र हजार, तीन सय पैँतालीस
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        12345
+                                    </td>
+                                    <td>
+                                        Twelve Thousand, Three Hundred and Forty Five
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        6789
+                                    </td>
+                                    <td>
+                                        छ हजार, सात सय उनान्नब्बे
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        10000000001
+                                    </td>
+                                    <td>
+                                        Ten Arab, One
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <p class="text-center mt-4">
+                Package used: <a href="https://www.npmjs.com/package/num-to-nep-words"
+                    target="_blank">num-to-nep-words</a>
+            </p>
+        </div>
+
+    </div>
+
+    <a class="github-fork-ribbon" href="https://url.to-your.repo" data-ribbon="Fork me on GitHub"
+        title="Fork me on GitHub">Fork me on GitHub</a>
+
+    <script src="https://unpkg.com/num-to-nep-words@1.0.4/conversion.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="./script.js"></script>
+</body>
+
+</html>
